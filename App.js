@@ -21,7 +21,7 @@ class App extends React.Component {
       
     }, 500);*/
 
-    const resp = await fetch('https://randomuser.me/api/?results=10');
+    const resp = await fetch('https://randomuser.me/api/?results=3');
     const data = await resp.json();
     const sorted = data.results.sort((a, b) => a.name.first.charCodeAt(0) - b.name.first.charCodeAt(0) );
     this.setState({users: sorted});
@@ -76,7 +76,7 @@ class App extends React.Component {
 
         </View>
 
-        <View style={{backgroundColor: '#ccc', flex: 1}}>
+        <View style={{backgroundColor: '#ccc', flex: 1, justifyContent: 'center'}}>
         {
           users.length > 0
           ?
